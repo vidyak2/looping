@@ -49,11 +49,15 @@
 
     // TODO: set howMany variable to a value user inputs
     var howMany
+    var name = prompt("How many rides have you been on?");
 
-    var counter = 1;
+    var counter = parseInt(name);
+    console.log(counter);
+    
+    var i=99;
 
     // TODO: execute this loop the number of times user requested
-    while(false){
+    while(counter < 99){
       console.log("Wheee! This is the ", counter, " time we've done this!");
 
       // find value of counter modulo length of sources array-
@@ -64,7 +68,11 @@
       theImg.setAttribute("src", imageSources[theOne]);
 
       // TODO: increment the counter
+    
+    counter= counter + 1;
     }
+    
+    console.log("End of loop")
 
     // EXTRA CHALLENGES:
     // 1. Using JS, add a class of "red" to the <h1>.
