@@ -48,16 +48,18 @@
     theImg.setAttribute("src", imageSources[0]);
 
     // TODO: set howMany variable to a value user inputs
-    var howMany
-    var name = prompt("How many rides have you been on?");
-
-    var counter = parseInt(name);
-    console.log(counter);
+    var howMany = prompt("How many rides have you been on?");
+    // We received a string, which needs to be converted into number
     
-    var i=99;
+    //Conversion into a number
+    var conversion = parseInt(howMany);
+    //We now have a number
+    
+    //Counter is defined as 1. This number will increase within the loop until it becomes equal to the value of "conversion", inputed by the user. "counter" here is basically "i". We defined "i=1" to begin the loop. So, we want loop to continue "while counter <= conversion".
+    var counter = 1;
 
     // TODO: execute this loop the number of times user requested
-    while(counter < 99){
+    while(counter <= conversion){
       console.log("Wheee! This is the ", counter, " time we've done this!");
 
       // find value of counter modulo length of sources array-
@@ -68,8 +70,9 @@
       theImg.setAttribute("src", imageSources[theOne]);
 
       // TODO: increment the counter
-    
-    counter= counter + 1;
+      
+      //We need the counter to increase by 1 until it reaches the value of "conversion"
+      counter= counter + 1;
     }
     
     console.log("End of loop")
