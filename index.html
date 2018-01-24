@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Loop the Loop</title>
   <style type="text/css">
     /*Header style*/
-    h1{
+
+    h1 {
       text-align: center;
     }
-    
+
     body {
       font-family: sans-serif;
       /*Background color style*/
       background-color: azure;
     }
-    
+
     img {
       max-width: 100%;
       /*Center and add padding to images*/
@@ -22,36 +24,37 @@
       margin-right: auto;
       padding: 1em;
     }
-/*
+
+    /*
     .red {
       color: red;
     }
 */
+
   </style>
 </head>
+
 <body>
   <h1 class="red">Whee!</h1>
 
   <img id="roller" src="" alt="roller coaster">
-  
+
   <img id="secondroller" src="" alt="rollercoaster">
 
   <script type="text/javascript">
-    
-    
     //Extra challenge 1: Add color red to h1 by using a class of red
-    
+
     //Create a variable "element" that compiles all the elements that have a class of "red".
     var element = document.getElementsByClassName('red');
     console.log(element);
-    
+
     //Add [0] to only take into consideration the first element (h1.red).
     var firstelement = element[0];
     console.log(firstelement);
-    
+
     //Add color red to retrieved firstelement
     firstelement.style.color = "red";
-    
+
     // Description:
 
     // When complete, this program will ask the user how many roller coaster rides
@@ -82,21 +85,21 @@
     // TODO: set howMany variable to a value user inputs
     var howMany = prompt("How many roller coaster rides would you like to go on?");
     // We received a string, which needs to be converted into number
-    
+
     //Conversion into a number
     var conversion = parseInt(howMany);
     console.log(conversion);
     //We now have a number
-    
+
     //Counter is defined as 1. This number will increase within the loop until it becomes equal to the value of "conversion", inputed by the user. "counter" here is basically "i". We defined "i=0" to begin the loop. So, we want loop to continue "while counter < conversion".
-//    
-//    image= "";
+    //    
+    //    image= "";
     var counter = 0;
 
     // TODO: execute this loop the number of times user requested
-    while(counter < conversion){
-      
-      console.log("Wheee! This is the ", (1+counter), " time we've done this!");
+    while (counter < conversion) {
+
+      console.log("Wheee! This is the ", (1 + counter), " time we've done this!");
 
       // find value of counter modulo length of sources array-
       // this value will increase by one on each iteration of the loop,
@@ -104,34 +107,34 @@
       var theOne = counter % imageSources.length;
       // reset the src of the image to the next member of the sources array
       theImg.setAttribute("src", imageSources[theOne]);
-//      console.log(theImg);
-      
-//      image += "the image is" + theOne;
-  
-//     setTimeout(function(){
-//        alert("alert!")
-//      }, 2000);
-//      
-//      console.log(setTimeout);
-//      }
-      
+      //      console.log(theImg);
+
+      //      image += "the image is" + theOne;
+
+      //     setTimeout(function(){
+      //        alert("alert!")
+      //      }, 2000);
+      //      
+      //      console.log(setTimeout);
+      //      }
+
 
       // TODO: increment the counter
-      
+
       //We need the counter to increase by 1 until it reaches the value of "conversion"
-      counter= counter + 1;
+      counter = counter + 1;
     }
-    
-    
+
+
     console.log("End of loop")
 
     //Extra challenge 2: We want to do the loop twice
-    
+
     //All variables are being renamed. This way, a second image will appear. Without renaming the variables, the image gets replaced with the image coming from the double loop (which isn't representative of the first loop).
 
     // select the <img> tag with id of "roller" from the HTML
     var SecondImg = document.querySelector("img#secondroller");
-    
+
     // an array of possible image source values
     var ImageSource = [
       "http://images.mentalfloss.com/sites/default/files/styles/width-constrained-728/public/503373-iStock-186293315.jpg",
@@ -142,14 +145,14 @@
 
     // set the src attribute of the img to be the first element in source array
     SecondImg.setAttribute("src", ImageSource[0]);
-    
+
     //Create condition for double loop
     var twiceloop = 2 * conversion;
     console.log(twiceloop);
 
     //Double loop
-    while(counter < twiceloop){
-      console.log("This loop is being done twice the number of times asked by the user! This is the ", (1+counter), " time the loop has been done!");
+    while (counter < twiceloop) {
+      console.log("This loop is being done twice the number of times asked by the user! This is the ", (1 + counter), " time the loop has been done!");
 
       // find value of counter modulo length of sources array-
       // this value will increase by one on each iteration of the loop,
@@ -158,13 +161,13 @@
       // reset the src of the image to the next member of the sources array
       SecondImg.setAttribute("src", ImageSource[theSecond]);
 
-      counter= counter + 1;
+      counter = counter + 1;
     }
-    
+
     console.log("End of double loop")
-    
-    
-    
+
+
+
     // EXTRA CHALLENGES:
     // 1. Using JS, add a class of "red" to the <h1>.
     //    This only needs to be done once, so code should be outside loop. 
@@ -175,4 +178,5 @@
   </script>
 
 </body>
+
 </html>
