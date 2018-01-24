@@ -55,7 +55,7 @@
     //Add color red to firstelement
     firstelement.style.color = "red";
 
-    // An array of possible image source values
+    //An array of possible image source values
     var imageSources = [
       "http://images.mentalfloss.com/sites/default/files/styles/width-constrained-728/public/503373-iStock-186293315.jpg",
       "https://media4.s-nbcnews.com/j/newscms/2017_31/1270023/wonder-woman-roller-coaster-today-inline-170803_7e4934000dfd84cdbb6b2f4900a03988.today-inline-large.jpg",
@@ -63,42 +63,39 @@
       "https://thediabeticjourney.com/wp-content/uploads/2016/08/diabetes-rollercoaster.png"
     ]
 
-    // Select the <img> tag with id of "roller" from the HTML
+    //Select the <img> tag with id of "roller" from the HTML
     var theImg = document.querySelector("img#roller");
 
-    // Set the src attribute of the img to be the first element in source array
+    //Set the src attribute of the img to be the first element in source array
     theImg.setAttribute("src", imageSources[0]);
 
-    // TODO: set howMany variable to a value user inputs
+    //TODO: set howMany variable to a value user inputs
     var howMany = prompt("How many roller coaster rides would you like to go on?");
 
-    // We received a string, which needs to be converted into number
+    //Convert string into number
     var conversion = parseInt(howMany);
     console.log(conversion);
 
-    //Counter will increase within the loop until it becomes equal to the value of "conversion", inputed by the user. We defined "counter=0" to begin the loop. 
+    //Define "counter=0" to begin loop 
     var counter = 0;
 
-    // TODO: execute this loop the number of times user requested
+    //TODO: execute this loop the number of times user requested
     while (counter < conversion) {
-
+      //Add "1+counter" so the first element in console.log has a value of 1
       console.log("Wheee! This is the ", (1 + counter), " time we've done this!");
 
-      // Image source will cycle through all possible images
+      //Image source will cycle through all possible images
       var theOne = counter % imageSources.length;
-      // Reset the src of the image to the next member of the sources array
+      //Reset the src of the image to the next member of the sources array
       theImg.setAttribute("src", imageSources[theOne]);
-      //      console.log(theImg);
-      //
-      //      image += "the image is" + theOne;
-      //
+
+      //Extra challenge 3: Add a pause to each loop. This code only makes an alert appear between each loop
       //      setTimeout(function() {
-      //        alert("alert!")
+      //        alert("hello!")
       //      }, 2000);
       //      console.log(setTimeout);
 
-
-      // TODO: increment the counter
+      //TODO: increment the counter
       counter = counter + 1;
     }
 
@@ -106,12 +103,12 @@
 
     //Extra challenge 2: Perform loop twice
 
-    //All variables are being renamed. This way, a second image will appear, below the first
+    //All variables are being renamed. This way, a second image will appear below the first
 
-    // Select the <img> tag with id of "roller" from the HTML
+    //Select the <img> tag with id of "roller" from the HTML
     var SecondImg = document.querySelector("img#secondroller");
 
-    // An array of possible image source values
+    //An array of possible image source values
     var ImageSource = [
       "http://images.mentalfloss.com/sites/default/files/styles/width-constrained-728/public/503373-iStock-186293315.jpg",
       "https://media4.s-nbcnews.com/j/newscms/2017_31/1270023/wonder-woman-roller-coaster-today-inline-170803_7e4934000dfd84cdbb6b2f4900a03988.today-inline-large.jpg",
@@ -130,9 +127,9 @@
     while (counter < twiceloop) {
       console.log("This loop is being done twice the number of times asked by the user! This is the ", (1 + counter), " time the loop has been done!");
 
-      // Image source will cycle through all possible images
+      //Image source will cycle through all possible images
       var theSecond = counter % ImageSource.length;
-      // Reset the src of the image to the next member of the sources array
+      //Reset the src of the image to the next member of the sources array
       SecondImg.setAttribute("src", ImageSource[theSecond]);
 
       counter = counter + 1;
